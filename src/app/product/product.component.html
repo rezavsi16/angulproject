@@ -1,0 +1,31 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>
+                <b>Id</b>
+            </td>
+            <td>
+                <b>Product Name</b>
+            </td>
+            <td>
+                 Action
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let values of products" [class.selected]="values === selectedProduct"
+        (click)="onSelect(values)">
+            <td>
+                {{ values.id }}
+            </td>
+            <td>
+                {{ values.name }}
+            </td>
+            <td>
+                <span>
+                    <a routerLink="/product/edit" class="fa fa-edit"></a>
+                </span>
+            </td>
+        </tr>
+    </tbody>
+ </table>
