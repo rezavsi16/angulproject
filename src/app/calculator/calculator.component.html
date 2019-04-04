@@ -1,0 +1,16 @@
+<h1>Calculator Online</h1>
+
+<input type="number" [(ngModel)]="bil_pertama" id="bil_pertama" name="bil_pertama">
+<input type="number" [(ngModel)]="bil_kedua" id="bil_kedua" name="bil_kedua">
+
+hasil
+<input type="number" [(ngModel)]="hasil" id="hasil" name="hasil" disabled>
+<button (click)="calculatedValue()">Submit</button>
+<button (click)="getServicesCalculator()" >getService</button>
+<div>{{ servicesValue }}</div>
+<br>
+<h2><label>History Result</label></h2>
+<div *ngFor="let list of hasils">
+    {{ list }}
+</div>
+<button (click)="clearList()">Clear List</button>
