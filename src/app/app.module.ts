@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { CalcModules } from './calculator/calculator.module';
 import { ProductModules } from "./product/ProductModules";
+import { Globals } from './GlobalScope';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { ProductModules } from "./product/ProductModules";
     CalcModules,
     ProductModules
   ],
-  providers: [],
+  providers: [Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

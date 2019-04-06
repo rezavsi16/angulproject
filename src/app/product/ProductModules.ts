@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './product.component';
 import { ProductService } from "./product.services";
 import { EditProductComponent } from './product.edit.component';
+import { Globals } from '../GlobalScope';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,7 @@ import { EditProductComponent } from './product.edit.component';
         AppRoutingModule,
         FormsModule
     ],
-    providers: [ProductService,AppRoutingModule],
+    providers: [ProductService,AppRoutingModule,Globals],
     bootstrap: [ProductComponent]
 })
 export class ProductModules {

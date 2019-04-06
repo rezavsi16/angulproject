@@ -13,18 +13,18 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let values of products">
+        <tr *ngFor = "let product of products">
             <td>
-                {{ values.id }}
+                {{ product.id }}
             </td>
             <td>
-                {{ values.name }}
+                {{ product.name }}
             </td>
             <td>
-                <span [class.selected]="values === selectedProduct"
-                    (click)="onSelect(values)" routerLink="/product/edit" class="fa fa-edit "></span>
+                <span [class.selected]="product === selectedProduct"
+                    (click)="onSelect(product)"  class="fa fa-edit "></span>
             </td>
         </tr>
     </tbody>
  </table>
- <app-edit-product [products]="selectedProduct" ></app-edit-product>
+ <app-edit-product [product]="selectedProduct" ></app-edit-product>

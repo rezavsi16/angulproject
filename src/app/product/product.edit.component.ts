@@ -1,19 +1,23 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProductComponent, ProductStructure } from './product.component';
+import { ProductStructure } from './product.component';
 
 @Component({
   selector: 'app-edit-product',
-  templateUrl: './edit.product.component.html'
+  templateUrl: './edit.product.component.html',
+  providers:[]
 })
 
-export class EditProductComponent {
-    @Input() products: ProductStructure;
+export class EditProductComponent implements OnInit{
+  @Input() product:ProductStructure;
+
+  constructor(){}
+  ngOnInit() {
+    this.getProducts();
+  }
+
+  getProducts(){
+
+  }
     
-    ngOnInit() {
-        this.getDetailProduct();
-      }
-    getDetailProduct(){
-        
-    }
 }
 
