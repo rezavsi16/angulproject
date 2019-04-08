@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ProductService } from './product.services';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-product',
@@ -9,8 +10,9 @@ import { ProductService } from './product.services';
 
 export class ProductComponent implements OnInit {
     
-    constructor(private productService:ProductService){}
+    constructor(private productService:ProductService,private data: DataService){}
     
+
     selectedProduct:ProductStructure;
     products: ProductStructure[];
 
@@ -20,8 +22,15 @@ export class ProductComponent implements OnInit {
     
       onSelect(productValue: ProductStructure): void {
         this.selectedProduct = productValue;
+
+        //Just Once Before Refresh After Refresh Will be Removed Because Angu cant keep data. (SHARED DATA SERVICE)
+        this.data.changeMessage(productValue);
+        
+        //Menyimpan Data Sementara Di Memory
+        localStorage.setItem("editProduct", JSON.stringify(productValue));
+
+        
       }
-    
       getProducts(): void {
         this.productService.getProducts()
             .subscribe(products => this.products = products);

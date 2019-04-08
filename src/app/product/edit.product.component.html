@@ -1,2 +1,6 @@
-Edit Component!
-{{ product.name }}
+<label>Edit Product </label>
+<br>
+<div *ngIf="message != NULL">
+<b>{{ message.name }} </b> || <b>{{ message.id }}</b>
+</div>
+{{ message.name }}

@@ -22,9 +22,12 @@
             </td>
             <td>
                 <span [class.selected]="product === selectedProduct"
-                    (click)="onSelect(product)"  class="fa fa-edit "></span>
+                    (click)="onSelect(product)" class="fa fa-edit ">Single Page</span>
+                    || <span [class.selected]="product === selectedProduct"
+                    (click)="onSelect(product)" routerLink="/product/edit" class="fa fa-edit ">Different</span>
             </td>
         </tr>
     </tbody>
  </table>
- <app-edit-product [product]="selectedProduct" ></app-edit-product>
+ <!-- if Singel Page Using This! -->
+ <app-edit-product [product]="selectedProduct"></app-edit-product>
