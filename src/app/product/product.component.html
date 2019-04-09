@@ -21,10 +21,10 @@
                 {{ product.name }}
             </td>
             <td>
-                <span [class.selected]="product === selectedProduct"
-                    (click)="onSelect(product)" class="fa fa-edit ">Single Page</span>
-                    || <span [class.selected]="product === selectedProduct"
-                    (click)="onSelect(product)" routerLink="/product/edit" class="fa fa-edit ">Different</span>
+                <button [class.selected]="product === selectedProduct"
+                    (click)="onSelect(product)" class="fa fa-edit ">Single Page(SharedDataService)</button>
+                    || <button [class.selected]="product === selectedProduct"
+                    (click)="onSelect(product)" routerLink="/product/edit" class="fa fa-edit">Different(LocalStorage)</button>
             </td>
         </tr>
     </tbody>
