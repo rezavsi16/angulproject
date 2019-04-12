@@ -4,6 +4,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { CalcComponent } from './calculator.component';
 import { FormsModule } from '@angular/forms';
 import { CalcService } from '../services/calculator.services';
+import { HttpServices } from '../services/httpServices';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { CalcService } from '../services/calculator.services';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [CalcService],
+  providers: [CalcService,HttpServices],
   bootstrap: [CalcComponent]
 })
 export class CalcModules { }

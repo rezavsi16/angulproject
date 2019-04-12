@@ -14,3 +14,9 @@ hasil
     {{ list }}
 </div>
 <button (click)="clearList()">Clear List</button>
+
+<h1>Test API Http Client</h1>
+<div *ngIf="httpValueObject != null">
+    {{ httpValueObject }}
+</div>
+<button (click)="getHttpClient()">Button Trigger API</button>

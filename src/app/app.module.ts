@@ -8,6 +8,8 @@ import { CalcModules } from './calculator/calculator.module';
 import { ProductModules } from "./product/ProductModules";
 import { Globals } from './GlobalScope';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +18,8 @@ import { Globals } from './GlobalScope';
     BrowserModule,
     AppRoutingModule,
     CalcModules,
-    ProductModules
+    ProductModules,
+    HttpClientModule
   ],
   providers: [Globals],
   bootstrap: [AppComponent]

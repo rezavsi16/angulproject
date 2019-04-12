@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CalcService } from '../services/calculator.services';
+import { HttpServices } from '../services/httpServices';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-calc',
@@ -13,8 +15,9 @@ export class CalcComponent {
   hasils = Array();
   loop = 0;
   servicesValue = '';
+  httpValueObject;
   
-  constructor(private calcService: CalcService) { }
+  constructor(private calcService: CalcService,private httpService:HttpServices) { }
 
   calculatedValue(){
     this.hasil = this.bil_pertama + this.bil_kedua;
@@ -28,6 +31,22 @@ export class CalcComponent {
   clearList(){
       this.hasils = Array();
       this.loop = 0;
+  }
+  getHttpClient(){
+
+  //  this.httpValueObject = this.httpService.getHttpClients()
+  //   .subscribe(
+  //     (response:Response)=> {
+  //       return response;
+  //     }
+  //   );
+
+    this.httpValueObject = this.httpService.getHttpClients()
+    .subscribe(data =>this.httpValueObject = data);
+  console.log(this.httpValueObject);
+  // this.httpService.getHttpClients().subscribe((res:Response)=>{return res});
+
+    // console.log(this.httpValueObject);
   }
 }
 
