@@ -34,16 +34,19 @@ export class CalcComponent {
   }
   getHttpClient(){
 
-  //  this.httpValueObject = this.httpService.getHttpClients()
-  //   .subscribe(
-  //     (response:Response)=> {
-  //       return response;
-  //     }
-  //   );
+   this.httpService.getHttpClients()
+    .subscribe(
+      (response:Response)=> {
+        // console.log(response);
+        this.httpValueObject = response;
+        console.log(this.httpValueObject);
+      }
+    );
 
-    this.httpValueObject = this.httpService.getHttpClients()
-    .subscribe(data =>this.httpValueObject = data);
+  // this.httpService.getHttpClients()
+  //   .subscribe(data =>this.httpValueObject = data);
   console.log(this.httpValueObject);
+
   // this.httpService.getHttpClients().subscribe((res:Response)=>{return res});
 
     // console.log(this.httpValueObject);
