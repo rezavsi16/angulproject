@@ -15,16 +15,16 @@ constructor(private httpService:HttpServices) { }
     employee_salary;
     employee_age;
     jsonObject;
-    employee_id;
+    employee_idUP;
+    employee_nameUP;
+    employee_ageUP;
+    employee_salaryUP;
 
     getHttpClient(){
     this.httpService.getHttpClients("http://dummy.restapiexample.com/api/v1/employees")
     .subscribe(
         (response:Response)=> {
          this.httpValueObject = response;
-            if(response != null || response != ''){
-                alert("Get Data Berhasil");
-            }
         }
     );
     }
@@ -34,9 +34,7 @@ constructor(private httpService:HttpServices) { }
         this.httpService.postsHttpClients("http://dummy.restapiexample.com/api/v1/create",this.jsonObject).subscribe(
             (response:Response)=>{
                 console.log(response);
-                if(response != null || response != ''){
-                    alert("Post Data Berhasil");
-                }
+                alert(console.log(response));
             }
         );
     }
@@ -45,10 +43,8 @@ constructor(private httpService:HttpServices) { }
         let url="http://dummy.restapiexample.com/api/v1/update/"+this.employee_idUP;
         this.httpService.putHttpClients(url,this.jsonObject).subscribe(
             (response:Response) =>{
-                console.log(response.name);
-                if(response.name != null || response.name != ''){
-                    alert("Update Berhasil");
-                }
+                console.log(response);
+                alert(console.log(response));
             }
         );
     }
