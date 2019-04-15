@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 
 import { CalcModules } from './calculator/calculator.module';
 import { ProductModules } from "./product/ProductModules";
-import { Globals } from './GlobalScope';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ApiModules } from './api/api.module';
 
 @NgModule({
   declarations: [
@@ -19,9 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     CalcModules,
     ProductModules,
-    HttpClientModule
+    HttpClientModule,
+    ApiModules
   ],
-  providers: [Globals],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './product.component';
-import { ProductService } from "./product.services";
+import { ProductService } from "../services/product.services";
 import { EditProductComponent } from './product.edit.component';
 import { DataService } from '../services/data.service';
 

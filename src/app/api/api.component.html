@@ -1,0 +1,36 @@
+<h1>API Http Client Employee</h1>
+<button (click)="getHttpClient()">Get Data Employee</button>
+<div *ngIf="httpValueObject != null">
+    <h2>List Of Data from BackEnd (Http.get) </h2>
+    <div *ngFor="let value of httpValueObject">
+        Id : <b> {{ value.id }} </b> Name Of Employee <b> {{ value.employee_name }} </b>
+    </div>
+</div>
+<h1>API Http Post Employee</h1>
+<div class="col-md-4">
+    <label class="label">Employee Name</label>
+    <input type="text" [(ngModel)]="employee_name" id="employee_name" name="employee_name"class="form-control">
+    <label class="label">Employee Salary</label>
+    <input type="number" [(ngModel)]="employee_salary" id="employee_salary" name="employee_salary" class="form-control">
+    <label class="label">Employee Age</label>
+    <input type="number" [(ngModel)]="employee_age" id="employee_age" name="employee_age" class="form-control">
+</div>
+<br>
+<button (click)="postHttpClient()">Test Push Data to</button>
+<h1>API Http Put Employee</h1>
+<div class="col-md-4">
+    <label class="label">Employee Id</label>
+    <input type="text" [(ngModel)]="employee_idUP" id="employee_idUP" name="employee_idUP"class="form-control">
+    <label class="label">Employee Name</label>
+    <input type="text" [(ngModel)]="employee_nameUP" id="employee_nameUP" name="employee_nameUP"class="form-control">
+    <label class="label">Employee Salary</label>
+    <input type="number" [(ngModel)]="employee_salaryUP" id="employee_salaryUP" name="employee_salaryUP" class="form-control">
+    <label class="label">Employee Age</label>
+    <input type="number" [(ngModel)]="employee_ageUP" id="employee_ageUP" name="employee_ageUP" class="form-control">
+</div>
+<br>
+<button (click)="putHttpClient()">Update Data Employee By Id</button>
+<br>
+<h1><label class="label">User Data API different Url</label></h1>
+<button (click)="putHttpClient()">Get User Data</button>
+

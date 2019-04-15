@@ -14,12 +14,3 @@ hasil
     {{ list }}
 </div>
 <button (click)="clearList()">Clear List</button>
-
-<h1>Test API Http Client</h1>
-<div *ngIf="httpValueObject != null">
-    <h2>List Of Data from BackEnd (Http.get) </h2>
-    <div *ngFor="let value of httpValueObject.results">
-        <b> {{ value.id }} </b> With Booking Class Code <b> {{ value.bookingClassCodes }} </b>
-    </div>
-</div>
-<button (click)="getHttpClient()">Get Data Button</button>

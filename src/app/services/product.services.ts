@@ -1,6 +1,6 @@
 import { Observable, of } from 'rxjs';
-import { PRODUCTS } from './product.mock';
-import { ProductStructure } from './product.component';
+import { PRODUCTS } from '../product/product.mock';
+import { ProductStructure } from '../product/product.component';
 
 export class ProductService {
     getCalcServices(){
